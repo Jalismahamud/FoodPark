@@ -112,7 +112,7 @@
                                                     Remeber Me
                                                 </label>
                                             </div>
-                                            <a href="forgot_password.html">Forgot Password ?</a>
+                                            <a href="{{ route('password.email') }}">Forgot Password ?</a>
                                         </div>
                                     </div>
 
