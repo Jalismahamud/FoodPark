@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <section class="section">
+    <section class="section mt-5">
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-12">
                 <div class="card card-statistic-2">

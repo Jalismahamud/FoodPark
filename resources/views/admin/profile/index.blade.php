@@ -1,0 +1,19 @@
+@extends('admin.layouts.master')
+
+@section('content')
+
+<div class="card card-primary">
+                  <div class="card-header">
+                    <h4>Card Header</h4>
+                    <div class="card-header-action">
+                      <a href="#" class="btn btn-primary">
+                        View All
+                      </a>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <p>Write something here</p>
+                  </div>
+                </div>
+
+@endsection
