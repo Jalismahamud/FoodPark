@@ -20,9 +20,13 @@ use App\Http\Controllers\Frontend\FrontendProfileController;
 |
 */
 
+
+
+
 Route::group(['middleware' => 'auth'] , function(){
     Route::get('/dashboard' , [DashboardController::class , 'index'])->name('dashbaord');
     Route::put('/profile',[FrontendProfileController::class, 'updateProfile'])->name('profile.update');
+    Route::put('/profile/update-password',[FrontendProfileController::class, 'updatePassword'])->name('profile.password.update');
     Route::put('profile/avatar' ,[FrontendProfileController::class, 'updateAvatar'])->name('profile.avatar.update');
        
 
