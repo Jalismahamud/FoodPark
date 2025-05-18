@@ -6,10 +6,12 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
+use App\Traits\FileUploadTrait;
 use App\Http\Requests\Frontend\ProfileUpdateRequest;
 
 class FrontendProfileController extends Controller
 {
+    use FileUploadTrait;
      public function updateProfile(ProfileUpdateRequest $request) :RedirectResponse
     {
         $user = Auth::user();
@@ -23,4 +25,15 @@ class FrontendProfileController extends Controller
         return redirect()->back();
         
     }
+
+public function updateAvatar(Request $request)
+{
+    $imagePath = $this->uploadImage($request, 'avatar');
+
+    $user = Auth::user();
+    $user->avatar = $imagePath;
+    $user->save();
+
+    return response(['status' => 'success', 'message' => 'Profile uploaded Successfully!'], 200);
+}
 }
